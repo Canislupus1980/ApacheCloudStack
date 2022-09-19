@@ -14,6 +14,7 @@ provider "cloudstack" {
 }
 
 resource "cloudstack_instance" "Jenkins" {
+    #count               = 2
     zone                = var.zone
     network_id          = "b5b66fc0-fa61-4bac-ba32-a1248dfc664b"
     name                = var.name
@@ -21,4 +22,10 @@ resource "cloudstack_instance" "Jenkins" {
     service_offering    = "L-Small Instance"
     template            = "9420cb9e-3dbe-4e26-bf67-2ca70c0036d7"
     expunge             = true
+
+    tags = {
+        Name = "Jenkins Server"
+        Owner = "Sergey Buhtiyarov"
+        Project = "Terraform Cloudstack"
+    }
 }
