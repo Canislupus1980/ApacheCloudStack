@@ -23,7 +23,7 @@ resource "cloudstack_instance" "depesha_server" {
     service_offering    = "L-Small Instance"
     template            = "Debian 11.1"
 
-keypair            = var.keypair
+keypair             = var.keypair
 expunge             = true
 tags                = var.tags
 }
