@@ -13,17 +13,12 @@ provider "cloudstack" {
   secret_key = "${var.cloudstack_secret_key}"
 }
 
-resource "cloudstack_instance" "depesha_server" {
+resource "cloudstack_instance" "Jenkins" {
     zone                = var.zone
-
-    project             = var.project
-    network_id          = "7926153f-f284-43e9-9ffd-d27299e62f54"
-    name                =  var.name
+    network_id          = "b5b66fc0-fa61-4bac-ba32-a1248dfc664b"
+    name                = var.name
     display_name        = "TN ${var.name}"
     service_offering    = "L-Small Instance"
-    template            = "Debian 11.1"
-
-keypair             = var.keypair
-expunge             = true
-tags                = var.tags
+    template            = "9420cb9e-3dbe-4e26-bf67-2ca70c0036d7"
+    expunge             = true
 }
